@@ -18,6 +18,8 @@ public:
 private slots:
     void on_actionOpen_Database_triggered();
 
+    void on_actionNew_Database_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
