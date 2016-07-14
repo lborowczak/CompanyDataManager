@@ -20,6 +20,7 @@ bool DatabaseHandler::CreateDatabase(const QString &DBFile)
     if (!db.open() || !CreateInitialTables()){
         return false; //Database unable to be opened or saved
     }
+    db.close();
     return true;
 }
 
