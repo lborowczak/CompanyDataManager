@@ -5,9 +5,11 @@ AMOUNTS_ID int PRIMARY KEY,
 Gross_Pay_In_Cents bigint,
 Gross_Overpay_In_Cents bigint,
 Federal_Withholding_In_Cents bigint,
+Federal_Withholding_Overpay_In_Cents bigint,
 Medicare_Employee_Withholding_In_Cents bigint,
 Social_Security_Employee_Witholding_In_Cents bigint,
-State_Withholding_In_Cents bigint
+State_Withholding_In_Cents bigint,
+State_Withholding_Overpay_In_Cents bigint
 );
 
 CREATE TABLE Dates(
