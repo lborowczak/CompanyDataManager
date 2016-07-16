@@ -12,6 +12,7 @@ public:
     DatabaseHandler();
     bool Connect(const QString &DBFile);
     bool CreateDatabase(const QString &DBFile);
+    void CloseConnection();
 private:
     QSqlDatabase db;
     bool CreateInitialTables();

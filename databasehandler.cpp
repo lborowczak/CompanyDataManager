@@ -20,7 +20,7 @@ bool DatabaseHandler::CreateDatabase(const QString &DBFile)
     if (!db.open() || !CreateInitialTables()){
         return false; //Database unable to be opened or saved
     }
-    db.close();
+    CloseConnection();
     return true;
 }
 
@@ -29,13 +29,16 @@ bool DatabaseHandler::CreateInitialTables()
     QSqlQuery PragmaQuery, AmountsCreationQuery, DatesCreationQuery, MainInfoCreationQuery;
     PragmaQuery.prepare("PRAGMA foreign_keys = ON");
     AmountsCreationQuery.prepare("CREATE TABLE Amounts("
-                               "AMOUNTS_ID int PRIMARY KEY,"
-                               "Gross_Pay_In_Cents bigint,"
-                               "Federal_Withholding_In_Cents bigint,"
-                               "Medicare_Employee_Withholding_In_Cents bigint,"
-                               "Social_Security_Employee_Witholding_In_Cents bigint,"
-                               "State_Withholding_In_Cents bigint)"
-                               );
+                                 "AMOUNTS_ID int PRIMARY KEY,"
+                                 "Gross_Pay_In_Cents bigint,"
+                                 "Federal_Withholding_In_Cents bigint,"
+                                 "Federal_Withholding_Overpay_In_Cents bigint,"
+                                 "Medicare_Employee_Withholding_In_Cents bigint,"
+                                 "Social_Security_Employee_Witholding_In_Cents bigint,"
+                                 "State_Withholding_In_Cents bigint,"
+                                 "State_Withholding_Overpay_In_Cents bigint"
+                                 ")"
+                                 );
 
     DatesCreationQuery.prepare("CREATE TABLE Dates("
                                "DATES_ID int PRIMARY KEY,"
@@ -68,4 +71,9 @@ bool DatabaseHandler::CreateInitialTables()
         return false;  //File cannot be created or saved
     }
     return true;
+}
+
+void DatabaseHandler::CloseConnection(){
+    db.commit();
+    db.close();
 }
