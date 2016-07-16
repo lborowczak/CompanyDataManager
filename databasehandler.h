@@ -10,6 +10,7 @@ class DatabaseHandler
 {
 public:
     DatabaseHandler();
+    ~DatabaseHandler();
     bool Connect(const QString &DBFile);
     bool CreateDatabase(const QString &DBFile);
     void CloseConnection();

@@ -5,6 +5,10 @@ DatabaseHandler::DatabaseHandler()
     db = QSqlDatabase::addDatabase("QSQLITE");
 }
 
+DatabaseHandler::~DatabaseHandler(){
+    CloseConnection();
+}
+
 bool DatabaseHandler::Connect(const QString &DBFile)
 {
     db.setDatabaseName(DBFile);
