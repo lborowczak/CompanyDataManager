@@ -6,6 +6,7 @@ DatabaseOpenWindow::DatabaseOpenWindow(QWidget *parent) :
     ui(new Ui::DatabaseOpenWindow)
 {
     ui->setupUi(this);
+    QMainWindow::showFullScreen();
 }
 
 DatabaseOpenWindow::~DatabaseOpenWindow()

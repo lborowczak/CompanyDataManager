@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
+#include <Qt>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -12,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    DBHandler.CloseConnection();
     delete ui;
 }
 
@@ -19,14 +21,24 @@ void MainWindow::on_actionOpen_Database_triggered()
 {
     QString DBPath = QFileDialog::getOpenFileName(this, tr("File selection"), QDir::homePath(), tr("Database files (*.db)"));
     DBHandler.Connect(DBPath);
-    DBManagementWindow = new DatabaseOpenWindow();
-    DBManagementWindow->show();
-    //this->setHidden(true); TODO figure out a better way to hide the window while the other window is open
+    openDatabaseWindow();
+
+
 }
 
 void MainWindow::on_actionNew_Database_triggered()
 {
     QString DBPath = QFileDialog::getSaveFileName(this, tr("test"), QDir::homePath(), tr("Database files (*.db)"));
+    if (DBPath == NULL){
+        return;
+    }
     QFile::remove(DBPath); //Delete file to make new one, user confirmed overwriting it
     DBHandler.CreateDatabase(DBPath);
 }
+
+void MainWindow::openDatabaseWindow(){
+    DBManagementWindow = new DatabaseOpenWindow();
+    ui->mdiArea->addSubWindow(DBManagementWindow, Qt::FramelessWindowHint);
+    DBManagementWindow->show();
+}
+

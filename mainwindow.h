@@ -22,6 +22,8 @@ private slots:
 
     void on_actionNew_Database_triggered();
 
+    void openDatabaseWindow();
+
 private:
     Ui::MainWindow *ui;
     DatabaseOpenWindow *DBManagementWindow;
