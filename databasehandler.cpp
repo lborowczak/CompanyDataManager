@@ -35,6 +35,8 @@ bool DatabaseHandler::CreateInitialTables()
     AmountsCreationQuery.prepare("CREATE TABLE Amounts("
                                  "AMOUNTS_ID int PRIMARY KEY,"
                                  "Gross_Pay_In_Cents bigint,"
+                                 "Gross_Overpay_In_Cents bigint,"
+                                 "Gross_Breakdown_Info text,"
                                  "Federal_Withholding_In_Cents bigint,"
                                  "Federal_Withholding_Overpay_In_Cents bigint,"
                                  "Medicare_Employee_Withholding_In_Cents bigint,"
@@ -59,6 +61,7 @@ bool DatabaseHandler::CreateInitialTables()
 
     MainInfoCreationQuery.prepare("CREATE TABLE MainInfo("
                                   "ID int PRIMARY KEY,"
+                                  "Company_Name text,"
                                   "Month tinyint,"
                                   "Quarter tinyint,"
                                   "Year smallint,"
