@@ -75,7 +75,7 @@ bool DatabaseHandler::CreateInitialTables()
     ||!DatesCreationQuery.exec()
     ||!MainInfoCreationQuery.exec()
     ){
-        return false;  //File cannot be created or saved
+        return false;  //File cannot be created or saved, or query failed
     }
     return true;
 }

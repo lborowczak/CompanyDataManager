@@ -20,24 +20,24 @@
      <height>16777215</height>
     </size>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="1" column="0">
-     <spacer name="verticalSpacer_5">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="DataSelectionLayout">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="SpecificTimeLayout">
         <item>
          <widget class="QRadioButton" name="radioButton_5">
           <property name="text">
@@ -46,18 +46,28 @@
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="SpecificTimeSelectionLayout">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_7">
+           <layout class="QVBoxLayout" name="YearLayout">
             <item>
-             <widget class="QCheckBox" name="checkBox">
+             <widget class="QCheckBox" name="YearCheckbox">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>Year</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox_4"/>
+             <widget class="QComboBox" name="YearsList">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+             </widget>
             </item>
             <item>
              <spacer name="verticalSpacer_8">
@@ -75,16 +85,26 @@
            </layout>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_8">
+           <layout class="QVBoxLayout" name="MonthLayout">
             <item>
-             <widget class="QCheckBox" name="checkBox_2">
+             <widget class="QCheckBox" name="MonthCheckbox">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>Month</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox_5"/>
+             <widget class="QComboBox" name="MonthsList">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+             </widget>
             </item>
             <item>
              <spacer name="verticalSpacer_7">
@@ -102,16 +122,32 @@
            </layout>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_9">
+           <layout class="QVBoxLayout" name="DayLayout">
             <item>
-             <widget class="QCheckBox" name="DaySelectCheckBox">
+             <widget class="QCheckBox" name="DayCheckbox">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>Day</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+              <property name="tristate">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="DaySelectComboBox"/>
+             <widget class="QComboBox" name="DaysList">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+             </widget>
             </item>
             <item>
              <spacer name="verticalSpacer_6">
@@ -137,7 +173,7 @@
         <item>
          <widget class="QRadioButton" name="radioButton_6">
           <property name="text">
-           <string>Show all data</string>
+           <string>Show a&amp;ll data</string>
           </property>
          </widget>
         </item>
@@ -171,132 +207,12 @@
       </item>
      </layout>
     </item>
-    <item row="2" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Show data for:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <widget class="QRadioButton" name="radioButton">
-            <property name="text">
-             <string>Date</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCalendarWidget" name="calendarWidget"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QRadioButton" name="radioButton_2">
-            <property name="text">
-             <string>Month</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QComboBox" name="comboBox"/>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_3"/>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QRadioButton" name="radioButton_3">
-            <property name="text">
-             <string>Year</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="comboBox_2"/>
-          </item>
-          <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <widget class="QRadioButton" name="radioButton_4">
-            <property name="text">
-             <string>All data</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Show</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
