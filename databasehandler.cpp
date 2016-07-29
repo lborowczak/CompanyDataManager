@@ -62,6 +62,7 @@ bool DatabaseHandler::CreateInitialTables()
     MainInfoCreationQuery.prepare("CREATE TABLE MainInfo("
                                   "ID int PRIMARY KEY,"
                                   "Company_Name text,"
+                                  "Company_Breakdown_Items text,"
                                   "Month tinyint,"
                                   "Quarter tinyint,"
                                   "Year smallint,"

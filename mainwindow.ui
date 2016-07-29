@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>961</width>
-    <height>643</height>
+    <width>600</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,13 +25,13 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>961</width>
+     <width>600</width>
      <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>Fi&amp;le</string>
     </property>
     <addaction name="actionNew_Database"/>
     <addaction name="actionOpen_Database"/>
@@ -42,7 +42,7 @@
   </widget>
   <action name="actionOpen_Database">
    <property name="text">
-    <string>Open Database...</string>
+    <string>&amp;Open Database...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -50,7 +50,7 @@
   </action>
   <action name="actionNew_Database">
    <property name="text">
-    <string>New Database...</string>
+    <string>&amp;New Database...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
@@ -58,7 +58,7 @@
   </action>
   <action name="actionClose">
    <property name="text">
-    <string>Close</string>
+    <string>&amp;Close</string>
    </property>
   </action>
  </widget>

@@ -15,11 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     databasehandler.cpp \
-    databaseopenwindow.cpp
+    databaseopenwindow.cpp \
+    entryeditordialog.cpp
 
 HEADERS  += mainwindow.h \
     databasehandler.h \
-    databaseopenwindow.h
+    databaseopenwindow.h \
+    entryeditordialog.h
 
 FORMS    += mainwindow.ui \
-    databaseopenwindow.ui
+    databaseopenwindow.ui \
+    entryeditordialog.ui

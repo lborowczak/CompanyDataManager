@@ -19,16 +19,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionOpen_Database_triggered()
 {
-    QString DBPath = QFileDialog::getOpenFileName(this, tr("File selection"), QDir::homePath(), tr("Database files (*.db)"));
+    QString DBPath = QFileDialog::getOpenFileName(this, tr("Open..."), QDir::homePath(), tr("Database files (*.db)"));
+    if (DBPath == NULL){
+        return;
+    }
     DBHandler.Connect(DBPath);
     openDatabaseWindow();
-
-
 }
 
 void MainWindow::on_actionNew_Database_triggered()
 {
-    QString DBPath = QFileDialog::getSaveFileName(this, tr("test"), QDir::homePath(), tr("Database files (*.db)"));
+    QString DBPath = QFileDialog::getSaveFileName(this, tr("Save as..."), QDir::homePath(), tr("Database files (*.db)"));
     if (DBPath == NULL){
         return;
     }
