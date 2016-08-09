@@ -18,8 +18,19 @@ public:
 private slots:
     void on_AddExpenseButton_clicked();
 
+    void on_PaymentDateSelector_clicked(const QDate &date);
+
 private:
     Ui::EntryEditorDialog *ui;
+
+    void setPaymentDate(const QDate &date);
+
+    void setPaymentWeekDates(QPair<const QDate, const QDate> dates);
+
+    void setDefaultDates();
+    void setDefaultDates(const QDate &date);
+
+    QPair<const QDate, const QDate> calculateWeekDates(const QDate &date);
 };
 
 #endif // ENTRYEDITORDIALOG_H

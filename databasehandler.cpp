@@ -28,6 +28,8 @@ bool DatabaseHandler::CreateDatabase(const QString &DBFile)
     return true;
 }
 
+
+
 bool DatabaseHandler::CreateInitialTables()
 {
     QSqlQuery PragmaQuery, AmountsCreationQuery, DatesCreationQuery, MainInfoCreationQuery;
